@@ -51,8 +51,8 @@ Dự án này được **Lưu Trọng Hiếu** phát triển và nâng cấp chu
 ## 💻 Hướng Dẫn Cài Đặt & Chạy Dự Án
 
 ### Yêu cầu hệ thống:
-- Python 3.11+
-- Hệ điều hành: Windows, macOS, hoặc Linux
+- **Python 3.11+** (hỗ trợ từ Python 3.10 trở lên)
+- Hệ điều hành: **Windows**, **macOS**, hoặc **Linux**
 
 ### 1. Tải Mã Nguồn:
 ```shell
@@ -60,26 +60,60 @@ git clone https://github.com/tronghieu/HTvideoAI.git
 cd HTvideoAI
 ```
 
-### 2. Cài Đặt Môi Trường:
+---
+
+### 🚀 Khởi Chạy Tự Động 1-Click (Khuyên Dùng)
+
+Dự án tích hợp bộ script Python thông minh `start.py`. Script này sẽ **tự động hoàn toàn**:
+- ✅ Kiểm tra phiên bản Python phù hợp.
+- ✅ Tự động tạo môi trường ảo (`.venv`) nếu chưa có.
+- ✅ Tự động cài đặt đầy đủ tất cả thư viện cần thiết từ `requirements.txt`.
+- ✅ Tự động tạo file `config.toml` từ file mẫu `config.example.toml` nếu thiếu.
+- ✅ Tự động quét và chọn Port trống khả dụng (8501 - 8599).
+- ✅ Tự động khởi chạy giao diện WebUI và **mở ngay trình duyệt web** cho bạn.
+- ✅ Tránh triệt để các lỗi thường gặp của file `.bat` / `.sh` truyền thống.
+
+#### 📌 Cách chạy nhanh nhất (Mọi hệ điều hành):
 ```shell
+python start.py
+```
+*(Nếu trên Linux/macOS dùng `python3 start.py`)*
+
+#### Hoặc bạn có thể click đúp / chạy qua file launcher:
+- **Trên Windows**: Nhấp đúp vào file `webui.bat`
+- **Trên Linux / macOS**: Chạy lệnh `sh webui.sh`
+
+---
+
+### ⚙️ Các Tùy Chọn Dòng Lệnh Nâng Cao Với `start.py`:
+
+| Lệnh | Ý nghĩa / Chức năng |
+| :--- | :--- |
+| `python start.py` | Tự kiểm tra, tự setup toàn bộ và khởi chạy WebUI + tự mở trình duyệt |
+| `python start.py --reinstall` | Buộc cài đặt lại toàn bộ thư viện trong `requirements.txt` |
+| `python start.py --port 8505` | Chỉ định cổng chạy WebUI theo ý muốn |
+| `python start.py --no-browser` | Khởi chạy server WebUI mà không tự động bật cửa sổ trình duyệt |
+| `python start.py --api` | Khởi chạy máy chủ API Backend FastAPI (`main.py`) thay vì WebUI |
+| `python start.py --check-only` | Chỉ kiểm tra môi trường và cài đặt dependencies rồi thoát |
+
+---
+
+### 🛠️ Cài Đặt Thủ Công (Dành Cho Ai Muốn Tự Setup):
+
+Nếu bạn muốn tự tay quản lý môi trường:
+```shell
+# 1. Tạo và kích hoạt môi trường ảo
 python -m venv .venv
-source .venv/bin/activate  # Trên Windows dùng: .venv\Scripts\activate
+source .venv/bin/activate  # Trên Windows: .venv\Scripts\activate
+
+# 2. Cài đặt thư viện
 pip install -r requirements.txt
+
+# 3. Khởi chạy WebUI
+streamlit run webui/Main.py
 ```
 
-### 3. Khởi Động Giao Diện WebUI:
-
-- **Trên Linux / macOS**:
-  ```shell
-  sh webui.sh
-  ```
-
-- **Trên Windows**:
-  ```cmd
-  webui.bat
-  ```
-
-Sau khi chạy, truy cập đường dẫn: **http://127.0.0.1:8501** trên trình duyệt.
+Sau khi chạy thành công, giao diện WebUI sẽ mở tại: **http://127.0.0.1:8501**
 
 ---
 
