@@ -49,90 +49,71 @@ This project has been extensively enhanced and modernized by **Lưu Trọng Hi�
 ---
 
 ## 💻 Installation & Quick Start
- 
- ### Prerequisites
--- Python 3.11 or later
--- Supported OS: Windows, macOS, or Linux
-+- **Python 3.11+** (Python 3.10+ supported)
-+- Supported OS: **Windows**, **macOS**, or **Linux**
- 
- ### 1. Clone Repository:
- ```shell
- git clone https://github.com/tronghieu/HTvideoAI.git
- cd HTvideoAI
- ```
- 
--### 2. Install Environment & Dependencies:
--```shell
-+---
-+
-+### 🚀 1-Click Auto Setup & Launcher (Recommended)
-+
-+The project includes a smart, cross-platform Python script `start.py` that handles everything automatically:
-+- ✅ Verifies Python version compatibility.
-+- ✅ Automatically creates a virtual environment (`.venv`) if not present.
-+- ✅ Automatically installs missing dependencies from `requirements.txt`.
-+- ✅ Automatically creates `config.toml` from `config.example.toml` if absent.
-+- ✅ Automatically finds an available network port (8501-8599).
-+- ✅ Automatically launches the WebUI and **opens your default web browser**.
-+- ✅ Eliminates traditional `.bat` / `.sh` script execution errors across different OS.
-+
-+#### 📌 Quickest Launch (Cross-platform):
-+```shell
-+python start.py
-+```
-+*(On Linux/macOS, use `python3 start.py`)*
-+
-+#### Or run via platform launchers:
-+- **Windows**: Double-click `webui.bat`
-+- **Linux / macOS**: Run `sh webui.sh`
-+
-+---
-+
-+### ⚙️ Command Line Options with `start.py`:
-+
-+| Command | Description |
-+| :--- | :--- |
-+| `python start.py` | Auto-verify, auto-setup all dependencies, start WebUI & open browser |
-+| `python start.py --reinstall` | Force reinstallation of all dependencies in `requirements.txt` |
-+| `python start.py --port 8505` | Specify custom port for the WebUI |
-+| `python start.py --no-browser` | Launch WebUI server without auto-opening the browser |
-+| `python start.py --api` | Launch FastAPI Backend Server (`main.py`) instead of WebUI |
-+| `python start.py --check-only` | Verify environment, setup `.venv` and exit without launching |
-+
-+---
-+
-+### 🛠️ Manual Installation (Optional):
-+
-+If you prefer to manage the virtual environment manually:
-+```shell
-+# 1. Create and activate virtualenv
- python -m venv .venv
- source .venv/bin/activate  # Windows: .venv\Scripts\activate
-+
-+# 2. Install requirements
- pip install -r requirements.txt
--```
--
--### 3. Launch WebUI:
--
--- **Linux / macOS**:
--  ```shell
--  sh webui.sh
--  ```
--
--- **Windows**:
--  ```cmd
--  webui.bat
--  ```
--
--After starting, open your browser and navigate to: **http://127.0.0.1:8501**
-+
-+# 3. Launch WebUI
-+streamlit run webui/Main.py
-+```
-+
-+After starting, navigate to **http://127.0.0.1:8501** in your browser.
+
+### Prerequisites
+- **Python 3.11+** (Python 3.10+ supported)
+- Supported OS: **Windows**, **macOS**, or **Linux**
+
+### 1. Clone Repository:
+```shell
+git clone https://github.com/tronghieu/HTvideoAI.git
+cd HTvideoAI
+```
+
+---
+
+### 🚀 1-Click Auto Setup & Launcher (Recommended)
+
+The project includes a smart, cross-platform Python script `start.py` that handles everything automatically:
+- ✅ Verifies Python version compatibility.
+- ✅ Automatically creates a virtual environment (`.venv`) if not present.
+- ✅ Automatically installs missing dependencies from `requirements.txt`.
+- ✅ Automatically creates `config.toml` from `config.example.toml` if absent.
+- ✅ Automatically finds an available network port (8501-8599).
+- ✅ Automatically launches the WebUI and **opens your default web browser**.
+- ✅ Eliminates traditional `.bat` / `.sh` script execution errors across different OS.
+
+#### 📌 Quickest Launch (Cross-platform):
+```shell
+python start.py
+```
+*(On Linux/macOS, use `python3 start.py`)*
+
+#### Or run via platform launchers:
+- **Windows**: Double-click `webui.bat`
+- **Linux / macOS**: Run `sh webui.sh`
+
+---
+
+### ⚙️ Command Line Options with `start.py`:
+
+| Command | Description |
+| :--- | :--- |
+| `python start.py` | Auto-verify, auto-setup all dependencies, start WebUI & open browser |
+| `python start.py --reinstall` | Force reinstallation of all dependencies in `requirements.txt` |
+| `python start.py --port 8505` | Specify custom port for the WebUI |
+| `python start.py --no-browser` | Launch WebUI server without auto-opening the browser |
+| `python start.py --api` | Launch FastAPI Backend Server (`main.py`) instead of WebUI |
+| `python start.py --check-only` | Verify environment, setup `.venv` and exit without launching |
+
+---
+
+### 🛠️ Manual Installation (Optional):
+
+If you prefer to manage the virtual environment manually:
+```shell
+# 1. Create and activate virtualenv
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+
+# 2. Install requirements
+pip install -r requirements.txt
+
+# 3. Launch WebUI
+streamlit run webui/Main.py
+```
+
+After starting, navigate to **http://127.0.0.1:8501** in your browser.
 
 ---
 
